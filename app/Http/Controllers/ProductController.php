@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
+use App\Models\Image;
+use Symfony\Component\HttpFoundation\Response;
 
 class ProductController extends Controller
 {
@@ -11,15 +14,16 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $products = Product::with('images')->get();
+        return view('index', ['products' => $products]);
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -27,7 +31,20 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $product = Product::create([
+            'title' => $request->input('title'),
+            'description' => $request->input('description'),
+            'price' => $request->input('price'),
+        ]);
 
+        $image = $request->file('image');
+        $path = $image->store('uploads', 'public');
+
+        $product->Images()->create([
+            'path' => $path,
+        ]);
+
+        return new Response($product, 202);
     }
 
     /**
@@ -59,6 +76,7 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Product::destroy($id);
+        return new Response(null , 200);
     }
 }

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Models\Image;
 
 class Product extends Model
 {
@@ -19,6 +20,6 @@ class Product extends Model
 
     public function Images(): HasMany
     {
-        return $this->hasMany('images');
+        return $this->hasMany(Image::class);
     }
 }
