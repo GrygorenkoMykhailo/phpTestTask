@@ -11,3 +11,4 @@ Route::delete('/destroy/{id}', [ProductController::class, 'destroy']);
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/dashboard/create', [DashboardController::class, 'create']);
+
