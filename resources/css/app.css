@@ -3,22 +3,62 @@ body{
     padding: 0;
     box-sizing: border-box;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+}
+
+a{
+    text-decoration: none;
+}
+
+header{
+    background-color: rgb(18, 17, 17);
+    color: white;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
-.container{
-    width: 95%;
+header p{
+    padding: 0;
+    margin: 0;
+}
+
+header .group{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 15%;
 }
 
+header .group a{
+    color: white;
+}
 
+header .group button{
+    background-color: rgb(33, 31, 31);
+    border: none;
+}
 
-main{
+.container{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+aside{
+    min-width: 200px;
+}
+
+.container main{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(6, 1fr);
 }
 
-.card{
-    flex-basis: 23%;
+.about-product h2{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
