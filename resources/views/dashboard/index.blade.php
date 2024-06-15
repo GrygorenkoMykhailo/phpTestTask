@@ -15,8 +15,10 @@
     <div class="container">
         <div class="wrapper">
             <aside>
-                <a href="/">View all products</a>
-                <a href="/create">Create new Product</a>
+                <ul>
+                    <li><a href="/dashboard">View all products</a></li>
+                    <li><a href="/dashboard/create">Create new Product</a></li>
+                </ul>  
             </aside>
 
             <main>

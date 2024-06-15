@@ -45,7 +45,7 @@ class ProductController extends Controller
             'path' => $path,
         ]);
 
-        return new Response($product, 202);
+        return view('dashboard.create');
     }
 
     /**

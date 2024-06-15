@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    background-color: rgb(188, 236, 115);
+    padding: 1em;
+    justify-content: center;
+    align-items: center;
+}
+
+header .wrapper{
+    width: 70%;
+}

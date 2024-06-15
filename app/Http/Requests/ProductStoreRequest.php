@@ -11,7 +11,7 @@ class ProductStoreRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,8 +22,8 @@ class ProductStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|max50',
-            'description' => 'required|min15',
+            'title' => 'required|max:50',
+            'description' => 'required|min:15',
             'price' => 'required|numeric',
             'image' => 'required|extentions:jpeg,jpg,png'
         ];
