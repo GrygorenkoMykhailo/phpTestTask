@@ -13,6 +13,9 @@
     </header>
 
     <main>
+        @foreach ($errors->all() as $error)
+            <div>{{$error}}</div>
+        @endforeach
         <div class="wrapper">
             <h2>Add a New Product</h2>
             <form action="{{ url('store') }}" method="POST" enctype="multipart/form-data">
