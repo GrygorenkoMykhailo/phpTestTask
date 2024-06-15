@@ -8,6 +8,8 @@
 - Controllers
 - Requests (Validation)
 - Models
+- Factories
+- Migrations
 - Storage (File System)
 - Feature Testing
 
