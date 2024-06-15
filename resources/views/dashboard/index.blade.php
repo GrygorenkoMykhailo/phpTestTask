@@ -22,16 +22,16 @@
             </aside>
 
             <main>
-                @foreach ($products as $product)
-                    <div class="card">
-                        <h2>{{ $product->title }}</h2>
-                        <p>{{ $product->description }}</p>
-                        <p>Price: ${{ $product->price }}</p>
-                        @foreach ($product->images as $image)
-                            <img src="{{ asset('storage/' . $image->path) }}" alt="Product Image">
-                        @endforeach
-                    </div>
-                @endforeach
+            @foreach ($products as $product)
+                <div class="card">
+                    <h2>{{ $product->title }}</h2>
+                    <p>{{ $product->description }}</p>
+                    <p>Price: ${{ $product->price }}</p>
+                    @foreach ($product->images as $image)
+                        <img src="{{ asset('storage/' . $image->path) }}" alt="Product Image">
+                    @endforeach
+                </div>
+            @endforeach
             </main>
         </div>
     </div>
