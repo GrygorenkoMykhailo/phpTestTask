@@ -16,7 +16,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::with('images')->get();
-        return view('index', ['products' => $products]);
+        return view('products.index', ['products' => $products]);
     }
 
     /**
