@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>E-comm</title>
 </head>
 <body>
     <header>
@@ -30,6 +30,8 @@
                     @foreach ($product->images as $image)
                         <img src="{{ asset('storage/' . $image->path) }}" alt="Product Image">
                     @endforeach
+                    <button type="button" class="delete-button" data-product-id="{{$product->id}}">Delete</button>
+                    <div class="server-error" style="display: none;">An error occured while attempting to delete this product</div>
                 </div>
             @endforeach
             </main>
@@ -39,6 +41,9 @@
     <footer>
 
     </footer>
+    <input type="hidden" id="token" value="{{csrf_token()}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     @vite('resources/css/dashboard.css')
+    @vite('resources/js/dashboard.js')
 </body>
 </html>

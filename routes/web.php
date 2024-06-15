@@ -8,7 +8,6 @@ use App\Http\Controllers\DashboardController;
 Route::get('/', [ProductController::class, 'index']);
 Route::post('/store', [ProductController::class, 'store']);
 Route::delete('/destroy/{id}', [ProductController::class, 'destroy']);
-Route::post('/test', [ProductController::class, 'test']);
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/dashboard/create', [DashboardController::class, 'create']);

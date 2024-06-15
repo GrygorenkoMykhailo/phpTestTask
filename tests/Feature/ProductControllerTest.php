@@ -13,18 +13,6 @@ use App\Models\Image;
 
 class ProductControllerTest extends TestCase
 {
-
-    #[Test]
-    public function get_products_index(): void
-    {
-        $product = Product::factory(3)
-                    ->has(Image::factory()) 
-                    ->create();
-        $response = $this->get('/');
-        $response->assertStatus(200);
-        $response->assertViewHas('products');
-    }
-
     #[Test]
     public function create_new_product(): void
     {
@@ -49,6 +37,17 @@ class ProductControllerTest extends TestCase
         ]);
 
         Storage::disk('public')->assertExists($image->path);
+        Product::destroy($product->id);
+    }
+    #[Test]
+    public function get_products_index(): void
+    {
+        $product = Product::factory(3)
+                    ->has(Image::factory()) 
+                    ->create();
+        $response = $this->get('/');
+        $response->assertStatus(200);
+        $response->assertViewHas('products');
     }
 
     #[Test]

@@ -78,6 +78,6 @@ class ProductController extends Controller
     public function destroy(string $id)
     {
         Product::destroy($id);
-        return new Response(null , 200);
+        return json_encode(Product::with('images')->get());
     }
 }
