@@ -3,6 +3,7 @@
 ## Used Technologies
 - Laravel
 - Bootstrap
+- JQuery
 
 ## Used Laravel Features
 - Controllers
