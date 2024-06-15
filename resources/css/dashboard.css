@@ -5,48 +5,11 @@ body{
 }
 
 header{
-    display: flex;
     background-color: rgb(188, 236, 115);
-    padding: 1em;
-    justify-content: center;
-    align-items: center;
 }
 
-header .wrapper{
-    width: 70%;
-}
-
-.container{
-    display: flex;
-    padding: 1em;
-    justify-content: center;
-    align-items: center;
-}
-
-.container .wrapper{
-    width: 70%;
-    display: flex;
-}
-
-.container .wrapper aside{
-    width: 20%;
-    max-width: 250px;
-    min-width: 200px;
-}
-
-.container .wrapper main{
+main{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.container .wrapper main .card{
-    flex-basis: 30%;
-    min-height: 200px;
-}
-
-.container .wrapper main .card img{
-    flex-basis: calc(33% - 1em);
-    width: 200px;
-    height: 200px;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr);
 }
