@@ -1,64 +1,116 @@
-body{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-}
-
-a{
-    text-decoration: none;
 }
 
 header{
-    background-color: rgb(18, 17, 17);
-    color: white;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-start;
 }
 
-header p{
-    padding: 0;
+header .left-group{
+    width: 45%;
+}
+
+header ul, p{
     margin: 0;
+    padding: 0;
+    cursor: pointer;
 }
 
-header .group{
+header ul li{
+    display: inline-block;
+    /* margin-right: 2em; */
+}
+
+header ul{
     display: flex;
-    justify-content: space-between;
+    gap: 2em;
+}
+
+.vertical-line{
+    border-left: 1px solid gray;
+    height: 80%;
+}
+
+header button{
+    margin-left: auto;
+    border: 2px solid gray;
+    max-width: min-content;
+    padding: .5em 1em;
+    transition: 0.3s ease;
+}
+
+header button:hover{
+    color: black;
+    background-color: rgb(242, 236, 236);
+    transition: 0.3s ease;
+}
+
+.poster{
+    background-image: url('https://placehold.co/1920x400');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    width: 15%;
+    color:white;
 }
 
-header .group a{
-    color: white;
-}
-
-header .group button{
-    background-color: rgb(33, 31, 31);
+.poster .container button{
+    background-color: white;
     border: none;
+    color: gray;
+    transition: .3s ease;
 }
 
-.container{
-    display: flex;
-    margin: 0;
-    padding: 0;
+.poster .container button:hover{
+    color: black;
+    background-color: rgb(242, 236, 236);
+    transition: 0.3s ease;
 }
 
-aside{
-    min-width: 200px;
-}
-
-.container main{
+main{
     display: grid;
-    grid-template-rows: repeat(5, 1fr);
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3,1fr);
 }
 
-.about-product h2{
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.title-group{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-group .left, .right{
+    width: 20%;
+    height: 1px;
+    background-color: gray;
+}
+
+@media (max-width: 1200px) {
+    header .left-group{
+        width: 70%;
+    }
+}
+
+@media (max-width: 768px) {
+    .poster .container h1, p{
+        text-align: center;
+    }
+
+    .poster .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+    }
+
+    main{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }   
 }

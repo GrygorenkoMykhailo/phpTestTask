@@ -17,10 +17,10 @@
 ## Screenshots
 
 ### Results Page
-![Results Page](results/index.png)
+![Results Page](results/index.gif)
 
 ### Modal Example
-![Modal Example](results/modal.png)
+![Modal Example](results/modal.gif)
 
 ### Dashboard View
 ![Dashboard View](results/dashboard.png)
